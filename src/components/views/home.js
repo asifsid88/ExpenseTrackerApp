@@ -56,7 +56,7 @@ class Home extends Component {
                     sections={this.prepareSectionData()}
                     renderItem={this.renderItem.bind(this)}
                     renderSectionHeader={this.renderSectionHeader.bind(this)}
-                    keyExtractor={item => item.title}
+                    keyExtractor={item => item.id}
                 />
             )
         } else {
