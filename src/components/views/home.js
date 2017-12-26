@@ -148,11 +148,11 @@ const styles = StyleSheet.create({
     amountBadgeContainer: {
         justifyContent: 'center',
         alignItems: 'flex-end',
-        
     },
     amountBadgeText: {
         fontWeight: 'bold',
-        color: '#ff652f'
+        color: '#ff652f',
+        fontSize: 16,
     }
 });
 
