@@ -13,7 +13,7 @@ export default function() {
     },
     {
       id: 2,
-      name: "Food",
+      name: "Lunch",
       dateOfExpense: "date",
       modeOfPayment: "Cash",
       amount: "1500",
@@ -24,7 +24,7 @@ export default function() {
     },
     {
       id: 3,
-      name: "Food",
+      name: "Dinner",
       dateOfExpense: "date",
       modeOfPayment: "Cash",
       amount: "1500",

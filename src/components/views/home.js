@@ -3,62 +3,58 @@ import {Component} from 'react';
 import {View,
         Text,
         StyleSheet,
-        FlatList
+        SectionList
         } from 'react-native';
 import {List,
-        ListItem} from 'react-native-elements';
+        ListItem,
+        Header
+        } from 'react-native-elements';
 import {connect} from 'react-redux';
 
 class Home extends Component {
 
     constructor(props) {
         super(props);
-
-        this.state = {
-            loading: false,
-            data: [],
-            page: 1,
-            seed: 1,
-            error: null,
-            refreshing: false,
-        };
     }
 
-    componentDidMount() {
-        this.makeRemoteRequest();
+    renderItem = (row) => {
+        return (
+            <ListItem title={row.item.name} />
+        );
     }
 
-    makeRemoteRequest = () => {
-        const { page, seed } = this.state;
-        const url = `https://randomuser.me/api/?seed=${seed}&page=${page}&results=50`;
-        this.setState({ loading: true });
-        fetch(url)
-            .then(res => res.json())
-            .then(res => {
-                this.setState({
-                    data: page === 1 ? res.results : [...this.state.data, ...res.results],
-                    error: res.error || null,
-                    loading: false,
-                    refreshing: false
-                });
-            })
-            .catch(error => {
-                this.setState({ error, loading: false });
-            });
-      };
+    renderSectionHeader = (row) => {
+        return (
+            <View style={styles.header}>
+                <Text>{row.section.title}</Text>
+            </View>
+        );
+    }
 
-    getExpenseList() {
+    getExpenseList = () => {
         if(this.props.expenses != null && this.props.expenses.length != 0) {
+            const sectionListData = [
+                { data: this.props.expenses, title: "Heading goes here1" },
+                { data: this.props.expenses, title: "Heading goes here2" },
+                { data: this.props.expenses, title: "Heading goes here3" },
+                { data: this.props.expenses, title: "Heading goes here4" },
+                { data: this.props.expenses, title: "Heading goes here5" },
+                { data: this.props.expenses, title: "Heading goes here6" },
+                { data: this.props.expenses, title: "Heading goes here7" },
+                { data: this.props.expenses, title: "Heading goes here8" },
+                { data: this.props.expenses, title: "Heading goes here9" },
+                { data: this.props.expenses, title: "Heading goes here10" },
+                { data: this.props.expenses, title: "Heading goes here11" },
+                { data: this.props.expenses, title: "Heading goes here12" },
+                { data: this.props.expenses, title: "Heading goes here13" }
+            ];
+
             return (
                 <List>
-                    <FlatList
-                        data={this.props.expenses}
-                        renderItem={({ item }) => (
-                            <ListItem
-                                title={item.name}
-                                subtitle={item.modeOfPayment}
-                            />
-                        )}
+                    <SectionList
+                        sections={sectionListData}
+                        renderItem={this.renderItem.bind(this)}
+                        renderSectionHeader={this.renderSectionHeader.bind(this)}
                         keyExtractor={item => item.id}
                     />
                 </List>
@@ -88,6 +84,10 @@ function mapStateToProps(state) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+    },
+    header: {
+        backgroundColor: '#a0a0a0',
+        padding: 5,
     }
 });
 
