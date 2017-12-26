@@ -2,36 +2,36 @@ export default function() {
   return [
     {
       id: 1,
-      name: "Food",
-      dateOfExpense: "date",
+      name: "Lunch at Yumlok",
+      dateOfExpense: "23/11/2017",
       modeOfPayment: "Cash",
       amount: "1500",
       currency: "INR",
       expenseCreateDate: "date",
       expenseModifiedDate: "date",
-      comment: "Expense additional comment goes here (optional)"
+      comment: "Lunch at yumlok was done between Asif and Abhinav"
     },
     {
       id: 2,
-      name: "Lunch",
-      dateOfExpense: "date",
-      modeOfPayment: "Cash",
-      amount: "1500",
+      name: "Dining Table",
+      dateOfExpense: "25/11/2017",
+      modeOfPayment: "Credit Card",
+      amount: "25000",
       currency: "INR",
       expenseCreateDate: "date",
       expenseModifiedDate: "date",
-      comment: "Expense additional comment goes here (optional)"
+      comment: "Dining table is purchased to decorate new home"
     },
     {
       id: 3,
-      name: "Dinner",
-      dateOfExpense: "date",
-      modeOfPayment: "Cash",
-      amount: "1500",
+      name: "Dinner at Blues",
+      dateOfExpense: "1/12/2017",
+      modeOfPayment: "PayTM",
+      amount: "3750",
       currency: "INR",
       expenseCreateDate: "date",
       expenseModifiedDate: "date",
-      comment: "Expense additional comment goes here (optional)"
+      comment: "Dinner at blues"
     }
   ]
 }
