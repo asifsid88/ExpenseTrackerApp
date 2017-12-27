@@ -4,12 +4,12 @@ import {View,
         Text,
         StyleSheet
     } from 'react-native';
-import TabPanel from './tab-panel/tab';
+import {Tabs} from './router';
 
 class Layout extends Component {
     render() {
         return (
-            <TabPanel />
+            <Tabs />
         )
     }
 }

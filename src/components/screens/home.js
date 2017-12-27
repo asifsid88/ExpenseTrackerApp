@@ -17,15 +17,21 @@ class Home extends Component {
         super(props);
     }
 
+    handleExpense = (expense) => {
+        console.log('m here:: ' + JSON.stringify(expense, 0, 2));
+        
+    }
+
     renderItem = (row) => {
         return (
             <ListItem 
                 leftIcon={<DateEmblem date={row.item.dateOfExpense} />}
                 title={row.item.name} 
                 subtitle={row.item.comment}
-                badge={{ element : <AmountBage amount={row.item.amount} />}}                
+                badge={{ element : <AmountBage amount={row.item.amount} />}}
+                onPress={() => this.handleExpense(row.item)}
             />
-        );
+        )
     }
 
     renderSectionHeader = (row) => {
@@ -67,6 +73,7 @@ class Home extends Component {
     }
 
     render() {
+        console.log('inside render');
         return (
             <View style={styles.container}>
                 {this.getExpenseList()}
