@@ -18,8 +18,7 @@ class Home extends Component {
     }
 
     handleExpense = (expense) => {
-        console.log('m here:: ' + JSON.stringify(expense, 0, 2));
-        
+        this.props.navigation.navigate('Expense', {...expense});
     }
 
     renderItem = (row) => {
