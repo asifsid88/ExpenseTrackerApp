@@ -7,7 +7,7 @@ import { ScrollView,
         } from 'react-native';
 import { Button } from 'react-native-elements';
 
-import { getCurrencySymbol } from '../../util';
+import { getCurrencySymbol, getVerbalDate } from '../../util';
 
 class Expense extends Component {
     render = () => {
@@ -20,7 +20,7 @@ class Expense extends Component {
         return (
             <ScrollView style={styles.container}>
                 <Text style={styles.title}>{name}</Text>
-                <Text style={styles.expenseDate}>{dateOfExpense}</Text>
+                <Text style={styles.expenseDate}>{getVerbalDate(dateOfExpense)}</Text>
                 
                 <Text style={{marginTop:5}}>
                     <Text style={styles.amount}>{getCurrencySymbol(currency)}{amount}</Text>
@@ -31,8 +31,8 @@ class Expense extends Component {
                 <Text style={{marginTop: 8}}>Comment: {comment}</Text>
                 
                 <View style={{marginTop: 20}}>
-                    <Text style={styles.information}>Expense is created on {expenseCreateDate} </Text>
-                    <Text style={styles.information}>Last updated on {expenseModifiedDate} </Text>
+                    <Text style={styles.information}>Expense is created on {getVerbalDate(expenseCreateDate)} </Text>
+                    <Text style={styles.information}>Last updated on {getVerbalDate(expenseModifiedDate)} </Text>
                 </View>
 
                 <View style={{marginTop: 40}}>

@@ -8,3 +8,7 @@ export function getCurrencySymbol(currencyCode) {
             return String.fromCharCode(parseInt('0x20B9', 16)); // Default INR
     }
 }
+
+export function getVerbalDate(date) {
+    return "November 23, 2017";
+}
