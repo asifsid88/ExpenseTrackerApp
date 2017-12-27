@@ -10,6 +10,7 @@ import { List,
          Header
         } from 'react-native-elements';
 import { connect } from 'react-redux';
+
 import * as Screen from '../config/screen-names';
 
 class Home extends Component {
@@ -128,6 +129,7 @@ const styles = StyleSheet.create({
     dateEmblemContainer: {
         width: 32,
         alignItems: 'center',
+        marginRight: 4
     },
     dateEmblemText1: {
         color: '#999',
