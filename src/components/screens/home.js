@@ -1,15 +1,16 @@
 import React from 'react';
-import {Component} from 'react';
-import {View,
-        Text,
-        StyleSheet,
-        SectionList
+import { Component } from 'react';
+import { View,
+         Text,
+         StyleSheet,
+         SectionList
         } from 'react-native';
-import {List,
-        ListItem,
-        Header
+import { List,
+         ListItem,
+         Header
         } from 'react-native-elements';
 import {connect} from 'react-redux';
+import * as Screen from '../config/screen-names';
 
 class Home extends Component {
 
@@ -18,7 +19,7 @@ class Home extends Component {
     }
 
     handleExpense = (expense) => {
-        this.props.navigation.navigate('Expense', {...expense});
+        this.props.navigation.navigate(Screen.EXPENSE, {...expense});
     }
 
     renderItem = (row) => {
@@ -71,8 +72,7 @@ class Home extends Component {
         }
     }
 
-    render() {
-        console.log('inside render');
+    render = () => {
         return (
             <View style={styles.container}>
                 {this.getExpenseList()}

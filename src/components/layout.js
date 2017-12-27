@@ -1,13 +1,13 @@
 import React from 'react';
-import {Component} from 'react';
-import {View, 
-        Text,
-        StyleSheet
-    } from 'react-native';
-import Tabs from './config/router';
+import { Component } from 'react';
+import { View, 
+         Text,
+         StyleSheet
+        } from 'react-native';
+import { Tabs } from './config/router';
 
 class Layout extends Component {
-    render() {
+    render = () => {
         return (
             <Tabs />
         )

@@ -6,7 +6,7 @@ import { View,
         } from 'react-native';
 
 class Expense extends Component {
-    render() {
+    render = () => {
         return (
             <View style={styles.container}>
                 <Text>Expense</Text>

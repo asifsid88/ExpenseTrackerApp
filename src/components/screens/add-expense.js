@@ -1,12 +1,12 @@
 import React from 'react';
-import {Component} from 'react';
-import {View,
-        Text,
-        StyleSheet
+import { Component } from 'react';
+import { View,
+         Text,
+         StyleSheet
         } from 'react-native';
 
 class AddExpense extends Component {
-    render() {
+    render = () => {
         return (
             <View style={styles.container}>
                 <Text>Add New Expense</Text>
