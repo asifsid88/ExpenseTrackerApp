@@ -1,4 +1,5 @@
 import React from 'react';
+import { Text } from 'react-native';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
@@ -13,9 +14,10 @@ export const ExpenseStack = StackNavigator({
     },
     Expense: {
         screen: Expense,
-        navigationOptioms: {
-            title: 'Details'
-        }
+        navigationOptions: ({navigation}) => ({
+            title: `${navigation.state.params.name}`,
+            headerRight: <Text style={{marginRight: 10}} onPress={() => {alert('Hi')}}>Edit</Text>
+        })
     }
 })
 

@@ -9,7 +9,7 @@ import { List,
          ListItem,
          Header
         } from 'react-native-elements';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import * as Screen from '../config/screen-names';
 
 class Home extends Component {
