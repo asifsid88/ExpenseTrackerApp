@@ -4,7 +4,7 @@ import {View,
         Text,
         StyleSheet
     } from 'react-native';
-import {Tabs} from './router';
+import {Tabs} from './config/router';
 
 class Layout extends Component {
     render() {

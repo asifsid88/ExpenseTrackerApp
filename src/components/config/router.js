@@ -1,9 +1,10 @@
 import React from 'react';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
-import Home from './screens/home';
-import Profile from './screens/profile';
-import AddExpense from './screens/add-expense';
+
+import Home from '../screens/home';
+import Profile from '../screens/profile';
+import AddExpense from '../screens/add-expense';
 
 export const Tabs = TabNavigator({
     Home: {
