@@ -10,6 +10,19 @@ import { Button } from 'react-native-elements';
 import { getCurrencySymbol, getVerbalDate } from '../../util';
 
 class Expense extends Component {
+
+    constructor(props) {
+        super(props);
+    }
+
+    editComment = () => {
+        alert('edit');
+    }
+
+    deleteExpense = () => {
+        alert('delete');
+    }
+
     render = () => {
         const {
             id, name, dateOfExpense, modeOfPayment,
@@ -41,12 +54,14 @@ class Expense extends Component {
                         icon={{name: 'mode-edit'}}
                         title='Edit Comment'
                         containerViewStyle={{marginBottom: 10}}
+                        onPress={() => this.editComment()}
                     />
                     <Button
                         raised
                         icon={{name: 'cancel'}}
                         title='Delete Expense'
                         backgroundColor='#b30000'
+                        onPress={() => this.deleteExpense()}
                     />
                 </View>
             </ScrollView>

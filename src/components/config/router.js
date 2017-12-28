@@ -11,6 +11,9 @@ import Expense from '../screens/expense';
 export const ExpenseStack = StackNavigator({
     AllExpenses: {
         screen: Home,
+        navigationOptions: {
+            title: 'All Expenses'
+        }
     },
     Expense: {
         screen: Expense,

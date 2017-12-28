@@ -10,8 +10,8 @@ export default function() {
           modeOfPayment: "Cash",
           amount: "1500",
           currency: "INR",
-          expenseCreateDate: "date",
-          expenseModifiedDate: "date",
+          expenseCreateDate: "23/11/2017",
+          expenseModifiedDate: "23/11/2017",
           comment: "Lunch at yumlok was done between Asif and Abhinav"
         },
         {
@@ -21,8 +21,8 @@ export default function() {
           modeOfPayment: "Credit Card",
           amount: "25000",
           currency: "INR",
-          expenseCreateDate: "date",
-          expenseModifiedDate: "date",
+          expenseCreateDate: "27/11/2017",
+          expenseModifiedDate: "27/11/2017",
           comment: "Dining table is purchased to decorate new home"
         }
       ]
@@ -37,8 +37,8 @@ export default function() {
           modeOfPayment: "PayTM",
           amount: "3750",
           currency: "INR",
-          expenseCreateDate: "date",
-          expenseModifiedDate: "date",
+          expenseCreateDate: "02/12/2017",
+          expenseModifiedDate: "05/12/2017",
           comment: "Dinner at blues"
         }
       ]

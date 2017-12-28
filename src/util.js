@@ -10,5 +10,9 @@ export function getCurrencySymbol(currencyCode) {
 }
 
 export function getVerbalDate(date) {
-    return "November 23, 2017";
+    const month = ["January", "February", "March", "April", 
+                    "May", "June", "July", "August", 
+                    "September", "October", "November", "December"];
+    const dateArr = date.split('/');
+    return month[dateArr[1]-1] + " " + dateArr[0] + ", " + dateArr[2];
 }
