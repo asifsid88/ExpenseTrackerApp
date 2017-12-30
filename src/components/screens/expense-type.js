@@ -12,12 +12,12 @@ class ExpenseType extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedOption: 'Expense Type'
+            selectedOption: 'Select Expense Type'
         }
     }
 
     render = () => {
-        const options = ['Cash', 'Credit Card', 'NetBanking'];
+        const options = ['Cash', 'Credit Card', 'Debit Card', 'NetBanking', 'Paytm', 'Amazon Pay', 'Other Wallet'];
 
         return (
             <View style={styles.container}>
@@ -38,7 +38,7 @@ class ExpenseType extends Component {
                     options={options}
                     onSubmit={(option) => {
                         this.setState({
-                        selectedOption: option,
+                            selectedOption: option,
                         });
                     }}
                 />
@@ -60,11 +60,11 @@ const styles = StyleSheet.create({
         borderColor: '#000',
         borderStyle: 'dashed',
         marginRight: 15,
-        width: 140
+        width: 190
     },
     text: {
-        color: '#c7c7cd',
-        maxWidth: 125,
+//        color: '#c7c7cd',
+        maxWidth: 190,
     }
 });
 

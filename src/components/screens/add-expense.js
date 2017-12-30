@@ -59,7 +59,7 @@ class AddExpense extends Component {
                 <View style={{flexDirection: 'row', marginBottom: 8, justifyContent: 'center'}}>
                     <ExpenseType />
                     <DatePicker
-                        style={{width: 200}}
+                        style={{width: 150}}
                         date={this.state.date}
                         mode="date"
                         placeholder="Expense Date"
@@ -109,8 +109,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row', 
         maxHeight: 100,
         height: 30,
-//        borderColor: '#000', 
-//        borderWidth: 1, 
         marginBottom: 10,
     },
     textInputView: {
