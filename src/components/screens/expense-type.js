@@ -1,0 +1,71 @@
+import React from 'react';
+import { Component } from 'react';
+import { View,
+         Text,
+         StyleSheet,
+         TouchableOpacity
+        } from 'react-native';
+import SimplePicker from 'react-native-simple-picker';
+
+class ExpenseType extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            selectedOption: 'Expense Type'
+        }
+    }
+
+    render = () => {
+        const options = ['Cash', 'Credit Card', 'NetBanking'];
+
+        return (
+            <View style={styles.container}>
+                <TouchableOpacity
+                    style={styles.label}
+                    onPress={() => {
+                        this.refs.picker.show();
+                    }}
+                >
+                    <Text 
+                        style={styles.text}
+                        numberOfLines={1}
+                    >{this.state.selectedOption}</Text>
+                </TouchableOpacity>
+                
+                <SimplePicker
+                    ref={'picker'}
+                    options={options}
+                    onSubmit={(option) => {
+                        this.setState({
+                        selectedOption: option,
+                        });
+                    }}
+                />
+            </View>
+        )
+    }
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flexDirection: 'row',
+        alignItems: 'center', 
+        justifyContent: 'center',
+    },
+    label: {
+        alignItems: 'center',
+        padding: 10,
+        borderWidth: 1, 
+        borderColor: '#000',
+        borderStyle: 'dashed',
+        marginRight: 15,
+        width: 140
+    },
+    text: {
+        color: '#c7c7cd',
+        maxWidth: 125,
+    }
+});
+
+export default ExpenseType;

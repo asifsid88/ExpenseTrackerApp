@@ -8,6 +8,8 @@ import Profile from '../screens/profile';
 import AddExpense from '../screens/add-expense';
 import Expense from '../screens/expense';
 
+import DatePicker from '../date-picker';
+
 export const ExpenseStack = StackNavigator({
     AllExpenses: {
         screen: Home,
@@ -21,6 +23,15 @@ export const ExpenseStack = StackNavigator({
             title: `${navigation.state.params.name}`,
             headerRight: <Text style={{marginRight: 10}} onPress={() => {alert('Hi')}}>Edit</Text>
         })
+    },
+})
+
+export const AddExpenseStack = StackNavigator({
+    AddExpense: {
+        screen: AddExpense,
+        navigationOptions: {
+            title: 'Add Bill'
+        }
     }
 })
 
@@ -33,7 +44,7 @@ export const Tabs = TabNavigator({
         }
     },
     AddExpense: {
-        screen: AddExpense,
+        screen: AddExpenseStack,
         navigationOptions: {
             tabBarLabel: 'Add Expense',
             tabBarIcon: ({ tintColor }) => <Icon name="add-circle-outline" size={35} color={tintColor} />  
