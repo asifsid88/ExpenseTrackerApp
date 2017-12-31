@@ -21,7 +21,6 @@ export const ExpenseStack = StackNavigator({
         screen: Expense,
         navigationOptions: ({navigation}) => ({
             title: `${navigation.state.params.name}`,
-            headerRight: <Text style={{marginRight: 10}} onPress={() => {alert('Hi')}}>Edit</Text>
         })
     },
 })

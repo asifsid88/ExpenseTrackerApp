@@ -15,7 +15,28 @@ class Expense extends Component {
         super(props);
     }
 
-    editComment = () => {
+    getButtonPanel = () => {
+        return (
+            <View style={{marginTop: 40}}>
+                <Button
+                    raised
+                    icon={{name: 'mode-edit'}}
+                    title='Edit Expense'
+                    containerViewStyle={{marginBottom: 10}}
+                    onPress={() => this.editExpense()}
+                />
+                <Button
+                    raised
+                    icon={{name: 'cancel'}}
+                    title='Delete Expense'
+                    backgroundColor='#b30000'
+                    onPress={() => this.deleteExpense()}
+                />
+            </View>
+        )
+    }
+
+    editExpense = () => {
         alert('edit');
     }
 
@@ -42,28 +63,13 @@ class Expense extends Component {
                 </Text>
                 
                 <Text style={{marginTop: 8}}>Comment: {comment}</Text>
-                
+
                 <View style={{marginTop: 20}}>
                     <Text style={styles.information}>Expense is created on {getVerbalDate(expenseCreateDate)} </Text>
                     <Text style={styles.information}>Last updated on {getVerbalDate(expenseModifiedDate)} </Text>
                 </View>
-
-                <View style={{marginTop: 40}}>
-                    <Button
-                        raised
-                        icon={{name: 'mode-edit'}}
-                        title='Edit Comment'
-                        containerViewStyle={{marginBottom: 10}}
-                        onPress={() => this.editComment()}
-                    />
-                    <Button
-                        raised
-                        icon={{name: 'cancel'}}
-                        title='Delete Expense'
-                        backgroundColor='#b30000'
-                        onPress={() => this.deleteExpense()}
-                    />
-                </View>
+                
+                {this.getButtonPanel()}
             </ScrollView>
         )
     }
