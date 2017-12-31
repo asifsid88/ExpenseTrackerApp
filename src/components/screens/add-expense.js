@@ -24,75 +24,93 @@ class AddExpense extends Component {
         }
     }
 
-    render = () => {
-        const options = ['Cash', 'Credit Card', 'NetBanking'];
-
+    getTopPanel = () => {
         return (
-            <View style={styles.container}>
+            <View style={styles.panelContainer}>
+                <View style={{flex: 1}}>
+                    <Icon 
+                        name="receipt"
+                        size={100}
+                    />
+                </View>
 
-                <View style={styles.panelContainer}>
-                    <View style={{flex: 1}}>
-                        <Icon 
-                            name="receipt"
-                            size={100}
+                <View style={{flex: 2}}>
+                    <View style={styles.textInputView}>
+                        <TextInput 
+                            style={{height: 30}}
+                            placeholder="Enter Expense Title"
                         />
                     </View>
 
-                    <View style={{flex: 2}}>
-                        <View style={styles.textInputView}>
-                            <TextInput 
-                                style={{height: 30}}
-                                placeholder="Enter Expense Title"
-                            />
-                        </View>
-
-                        <View style={styles.textInputView}>
-                            <Text style={{fontSize: 24, marginRight: 5, fontWeight: 'bold'}}>{getCurrencySymbol('INR')}</Text>
-                            <TextInput 
-                                style={{height: 30}}
-                                placeholder="Expense Amount"
-                            />
-                        </View>
+                    <View style={styles.textInputView}>
+                        <Text style={{fontSize: 24, marginRight: 5, fontWeight: 'bold'}}>{getCurrencySymbol('INR')}</Text>
+                        <TextInput 
+                            style={{height: 30}}
+                            placeholder="Expense Amount"
+                        />
                     </View>
                 </View>
+            </View>
+        )
+    }
 
-                <View style={{flexDirection: 'row', marginBottom: 8, justifyContent: 'center'}}>
-                    <ExpenseType />
-                    <DatePicker
-                        style={{width: 150}}
-                        date={this.state.date}
-                        mode="date"
-                        placeholder="Expense Date"
-                        format="DD/MM/YYYY"
-                        minDate="01/01/2000"
-                        maxDate="01/01/2200"
-                        confirmBtnText="Confirm"
-                        cancelBtnText="Cancel"
-                        onDateChange={(date) => this.setState({date: date})}
-                    />
-                </View>
+    getExpenseTypeAndDatePanel = () => {
+        return (
+            <View style={{flexDirection: 'row', marginBottom: 8, justifyContent: 'center'}}>
+                <ExpenseType />
+                <DatePicker
+                    style={{width: 150}}
+                    date={this.state.date}
+                    mode="date"
+                    placeholder="Expense Date"
+                    format="DD/MM/YYYY"
+                    minDate="01/01/2000"
+                    maxDate="01/01/2200"
+                    confirmBtnText="Confirm"
+                    cancelBtnText="Cancel"
+                    onDateChange={(date) => this.setState({date: date})}
+                />
+            </View>
+        )
+    }
 
-                <View style={styles.panelContainer}>
-                    <TextInput 
-                        multiline={true}
-                        width='100%'
-                        numberOfLines={3}
-                        borderStyle='dashed'
-                        borderWidth={1}
-                        style={{padding: 5}}
-                        placeholder="Enter description here . . ."
-                    />
-                </View>
+    getCommentPanel = () => {
+        return (
+            <View style={styles.panelContainer}>
+                <TextInput 
+                    multiline={true}
+                    width='100%'
+                    numberOfLines={3}
+                    borderStyle='dashed'
+                    borderWidth={1}
+                    style={{padding: 5}}
+                    placeholder="Enter description here . . ."
+                />
+            </View>
+        )
+    }
 
-                <View>
-                    <Button
-                        raised
-                        title='Save'
-                        icon={{name: 'done'}}
-                        backgroundColor='#ff5216'
-                        onPress={() => { alert('Saving...'); }}
-                    />    
-                </View>
+    getButtonLayout = () => {
+        return (
+            <View>
+                <Button
+                    raised
+                    title='Save'
+                    icon={{name: 'done'}}
+                    backgroundColor='#ff5216'
+                    onPress={() => { alert('Saving...'); }}
+                />    
+            </View>
+        )
+    }
+
+    render = () => {
+        return (
+            <View style={styles.container}>
+                {this.getTopPanel()}
+                {this.getExpenseTypeAndDatePanel()}
+                {this.getCommentPanel()}
+                {this.getButtonLayout()}
             </View>
         )
     }

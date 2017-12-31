@@ -71,7 +71,8 @@ class Expense extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        padding: 10
+        padding: 10,
+        backgroundColor: '#fff'
     },
     title: {
         fontSize: 24,
