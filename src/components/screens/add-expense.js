@@ -18,26 +18,11 @@ import ExpenseType from './expense-type';
 class AddExpense extends Component {
 
     static navigationOptions = ({navigation}) => {
-        console.log('===========================================');
-        console.log('params: ' + JSON.stringify(navigation));
-        const name = (navigation.state.params !== undefined) ? "Mil gaya params :D" : "No param :(";
+        const title = (navigation.state.params !== undefined) ? navigation.state.params.name : "Add Bill";
 
         return {
-            headerTitle: `${name}`,
-            headerLeft: (
-                <TouchableOpacity
-                    style={{marginLeft: 10}}
-                    onPress={() => {
-                        navigation.dispatch(NavigationActions.back());                      
-                    }}
-                >
-                    <Text 
-                        style={{color: '#037aff', fontWeight: '500', fontSize: 18}}
-                        numberOfLines={1}
-                    >Cancel</Text>
-                </TouchableOpacity>
-            ),
-            headerBackTitle: 'Cancel'
+            headerTitle: `${title}`,
+            
         }
     }
 

@@ -39,7 +39,7 @@ export const Tabs = TabNavigator({
             tabBarIcon: ({ tintColor }) => <Icon name="home" size={35} color={tintColor} />  
         }
     },
-    AddExpense: {
+    AddExpenseStack: {
         screen: AddExpenseStack,
         navigationOptions: {
             tabBarLabel: 'Add Expense',
