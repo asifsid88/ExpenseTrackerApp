@@ -6,7 +6,7 @@ export default function() {
         {
           id: 1,
           name: "Lunch at Yumlok",
-          dateOfExpense: "23/11/2017",
+          dateOfExpense: "10/11/2017",
           modeOfPayment: "Cash",
           amount: "1500",
           currency: "INR",

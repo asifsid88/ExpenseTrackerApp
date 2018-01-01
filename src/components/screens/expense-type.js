@@ -12,7 +12,7 @@ class ExpenseType extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedOption: 'Select Expense Type'
+            selectedOption: this.props.selectedOption || 'Select Expense Type'
         }
     }
 

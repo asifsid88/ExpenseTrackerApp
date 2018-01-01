@@ -61,6 +61,8 @@ class AddExpense extends Component {
                         <TextInput 
                             style={{height: 30}}
                             placeholder="Enter Expense Title"
+                            onChange={(name) => this.setState({name})}
+                            value={this.state.name}
                         />
                     </View>
 
@@ -69,6 +71,8 @@ class AddExpense extends Component {
                         <TextInput 
                             style={{height: 30}}
                             placeholder="Expense Amount"
+                            onChange={(amount) => this.setState({amount})}
+                            value={this.state.amount}
                         />
                     </View>
                 </View>
@@ -79,7 +83,9 @@ class AddExpense extends Component {
     getExpenseTypeAndDatePanel = () => {
         return (
             <View style={{flexDirection: 'row', marginBottom: 8, justifyContent: 'center'}}>
-                <ExpenseType />
+                <ExpenseType
+                    selectedOption={this.state.expenseType}
+                />
                 <DatePicker
                     style={{width: 150}}
                     date={this.state.dateOfExpense}
@@ -107,6 +113,8 @@ class AddExpense extends Component {
                     borderWidth={1}
                     style={{padding: 5}}
                     placeholder="Enter description here . . ."
+                    onChange={(comment) => this.setState({comment})}
+                    value={this.state.comment}
                 />
             </View>
         )
