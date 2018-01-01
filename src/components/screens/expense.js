@@ -18,8 +18,6 @@ class Expense extends Component {
     }
 
     handleEditExpense = () => {
-        //this.props.navigation.navigate(Screen.ADD_EXPENSE, {...this.props.navigation.state.params});
-
         const navigateAction = NavigationActions.navigate({
             routeName: Screen.ADD_EXPENSE,
             params: {...this.props.navigation.state.params},
