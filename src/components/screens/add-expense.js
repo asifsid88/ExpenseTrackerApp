@@ -18,19 +18,31 @@ import ExpenseType from './expense-type';
 class AddExpense extends Component {
 
     static navigationOptions = ({navigation}) => {
-        const title = (navigation.state.params !== undefined) ? navigation.state.params.name : "Add Bill";
-
+        const title = (navigation.state.params !== undefined) ? navigation.state.params.name : 'Add Bill';
         return {
             headerTitle: `${title}`,
-            
+            headerBackTitle: 'Cancel'
         }
     }
 
     constructor(props) {
         super(props);
         this.state = {
-            date: '',
-            expenseType: 'Cash'
+            expenseType: 'Cash',
+            id: '',
+            name: '',
+            dateOfExpense: '',
+            modeOfPayment: '',
+            amount: '',
+            expenseCreateDate: '',
+            expenseModifiedDate: '',
+            comment: ''
+        }
+    }
+
+    componentDidMount() {
+        if(this.props && this.props.navigation && this.props.navigation.state.params) {
+            this.setState({...this.props.navigation.state.params});
         }
     }
 
@@ -70,7 +82,7 @@ class AddExpense extends Component {
                 <ExpenseType />
                 <DatePicker
                     style={{width: 150}}
-                    date={this.state.date}
+                    date={this.state.dateOfExpense}
                     mode="date"
                     placeholder="Expense Date"
                     format="DD/MM/YYYY"
@@ -78,7 +90,7 @@ class AddExpense extends Component {
                     maxDate="01/01/2200"
                     confirmBtnText="Confirm"
                     cancelBtnText="Cancel"
-                    onDateChange={(date) => this.setState({date: date})}
+                    onDateChange={(dateOfExpense) => this.setState({dateOfExpense: dateOfExpense})}
                 />
             </View>
         )
