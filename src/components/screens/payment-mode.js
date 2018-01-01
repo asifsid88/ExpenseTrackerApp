@@ -7,7 +7,7 @@ import { View,
         } from 'react-native';
 import SimplePicker from 'react-native-simple-picker';
 
-class ExpenseType extends Component {
+class PaymentMode extends Component {
 
     constructor(props) {
         super(props);
@@ -27,7 +27,7 @@ class ExpenseType extends Component {
                     <Text 
                         style={styles.text}
                         numberOfLines={1}
-                    >{this.props.selectedOption || "Select Expense Type"}</Text>
+                    >{this.props.selectedOption || "Select Payment Mode"}</Text>
                 </TouchableOpacity>
                 
                 <SimplePicker
@@ -61,4 +61,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default ExpenseType;
+export default PaymentMode;

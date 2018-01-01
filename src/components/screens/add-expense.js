@@ -13,7 +13,7 @@ import DatePicker from 'react-native-datepicker';
 import { NavigationActions } from 'react-navigation'
 
 import { getCurrencySymbol } from '../../util';
-import ExpenseType from './expense-type';
+import PaymentMode from './payment-mode';
 
 class AddExpense extends Component {
 
@@ -82,7 +82,7 @@ class AddExpense extends Component {
     getExpenseTypeAndDatePanel = () => {
         return (
             <View style={{flexDirection: 'row', marginBottom: 8, justifyContent: 'center'}}>
-                <ExpenseType
+                <PaymentMode
                     selectedOption={this.state.modeOfPayment}
                     selectPaymentMode={this.handleSelectPaymentMode.bind(this)}
                 />
