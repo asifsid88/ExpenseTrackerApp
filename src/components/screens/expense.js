@@ -8,11 +8,16 @@ import { ScrollView,
 import { Button } from 'react-native-elements';
 
 import { getCurrencySymbol, getVerbalDate } from '../../util';
+import * as Screen from '../config/screen-names';
 
 class Expense extends Component {
 
     constructor(props) {
         super(props);
+    }
+
+    handleEditExpense = (expense) => {
+        this.props.navigation.navigate(Screen.ADD_EXPENSE, {...this.props.navigation.state.params});
     }
 
     getButtonPanel = () => {
@@ -23,7 +28,7 @@ class Expense extends Component {
                     icon={{name: 'mode-edit'}}
                     title='Edit Expense'
                     containerViewStyle={{marginBottom: 10}}
-                    onPress={() => this.editExpense()}
+                    onPress={() => this.handleEditExpense()}
                 />
                 <Button
                     raised

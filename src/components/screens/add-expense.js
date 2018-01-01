@@ -16,6 +16,23 @@ import ExpenseType from './expense-type';
 
 class AddExpense extends Component {
 
+    static navigationOptions = {
+        headerTitle: 'New Title',
+        headerLeft: (
+            <TouchableOpacity
+//                style={{}}
+                onPress={() => {
+                    alert('hi');
+                }}
+            >
+                <Text 
+//                    style={{}}
+                    numberOfLines={1}
+                >Back</Text>
+            </TouchableOpacity>
+        )
+    }
+
     constructor(props) {
         super(props);
         this.state = {

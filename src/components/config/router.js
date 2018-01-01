@@ -28,9 +28,9 @@ export const ExpenseStack = StackNavigator({
 export const AddExpenseStack = StackNavigator({
     AddExpense: {
         screen: AddExpense,
-        navigationOptions: {
-            title: 'Add Bill'
-        }
+        navigationOptions: ({navigation}) => ({
+            title: 'Add Bill',
+        })
     }
 })
 
