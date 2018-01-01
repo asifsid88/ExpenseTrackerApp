@@ -11,14 +11,11 @@ class ExpenseType extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            selectedOption: this.props.selectedOption || 'Select Expense Type'
-        }
     }
 
     render = () => {
         const options = ['Cash', 'Credit Card', 'Debit Card', 'NetBanking', 'Paytm', 'Amazon Pay', 'Other Wallet'];
-
+        
         return (
             <View style={styles.container}>
                 <TouchableOpacity
@@ -30,17 +27,13 @@ class ExpenseType extends Component {
                     <Text 
                         style={styles.text}
                         numberOfLines={1}
-                    >{this.state.selectedOption}</Text>
+                    >{this.props.selectedOption || "Select Expense Type"}</Text>
                 </TouchableOpacity>
                 
                 <SimplePicker
                     ref={'picker'}
                     options={options}
-                    onSubmit={(option) => {
-                        this.setState({
-                            selectedOption: option,
-                        });
-                    }}
+                    onSubmit={(option) => this.props.selectPaymentMode(option)}
                 />
             </View>
         )

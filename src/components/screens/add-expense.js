@@ -28,7 +28,6 @@ class AddExpense extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            expenseType: 'Cash',
             id: '',
             name: '',
             dateOfExpense: '',
@@ -84,7 +83,8 @@ class AddExpense extends Component {
         return (
             <View style={{flexDirection: 'row', marginBottom: 8, justifyContent: 'center'}}>
                 <ExpenseType
-                    selectedOption={this.state.expenseType}
+                    selectedOption={this.state.modeOfPayment}
+                    selectPaymentMode={this.handleSelectPaymentMode.bind(this)}
                 />
                 <DatePicker
                     style={{width: 150}}
@@ -132,6 +132,10 @@ class AddExpense extends Component {
                 />    
             </View>
         )
+    }
+
+    handleSelectPaymentMode(modeOfPayment) {
+        this.setState({modeOfPayment});
     }
 
     render = () => {
