@@ -41,10 +41,6 @@ class Expense extends Component {
         )
     }
 
-    editExpense = () => {
-        alert('edit');
-    }
-
     deleteExpense = () => {
         alert('delete');
     }

@@ -10,6 +10,7 @@ import { Icon,
          Button
         } from 'react-native-elements';
 import DatePicker from 'react-native-datepicker';
+import { NavigationActions } from 'react-navigation'
 
 import { getCurrencySymbol } from '../../util';
 import ExpenseType from './expense-type';
@@ -22,13 +23,13 @@ class AddExpense extends Component {
             <TouchableOpacity
 //                style={{}}
                 onPress={() => {
-                    alert('hi');
+                    this.props.navigation.dispatch(NavigationActions.back());                      
                 }}
             >
                 <Text 
 //                    style={{}}
                     numberOfLines={1}
-                >Back</Text>
+                >Cancel</Text>
             </TouchableOpacity>
         )
     }
