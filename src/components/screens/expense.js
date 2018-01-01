@@ -6,6 +6,7 @@ import { ScrollView,
          StyleSheet
         } from 'react-native';
 import { Button } from 'react-native-elements';
+import { NavigationActions } from 'react-navigation'
 
 import { getCurrencySymbol, getVerbalDate } from '../../util';
 import * as Screen from '../config/screen-names';
@@ -16,8 +17,14 @@ class Expense extends Component {
         super(props);
     }
 
-    handleEditExpense = (expense) => {
-        this.props.navigation.navigate(Screen.ADD_EXPENSE, {...this.props.navigation.state.params});
+    handleEditExpense = () => {
+        //this.props.navigation.navigate(Screen.ADD_EXPENSE, {...this.props.navigation.state.params});
+
+        const navigateAction = NavigationActions.navigate({
+            routeName: Screen.ADD_EXPENSE,
+            params: {...this.props.navigation.state.params},
+        });
+        this.props.navigation.dispatch(navigateAction);  
     }
 
     getButtonPanel = () => {
